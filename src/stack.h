@@ -12,3 +12,4 @@ node* sp;                   //スタックのtopを指すポインタ(先頭の�
 bool is_empty();            //isEmpty
 void push(char value);      //push
 char pop();                 //pop
+char peek();                //peek

@@ -35,16 +35,27 @@ void push(char data){
 }
 
 char pop(){
-    //スタックがカラの場合popはできないのでエラーを出して終了
+    //スタックがカラの場合NULLを返す
     if(is_empty()){
-        puts("ERROR:Stack Underflow");
-        exit(1);
+        return NULL;
     }
     //スタックのtopをpopする
     node* node_pop = sp;        //popするノードを指すポインタ
     char data = node_pop->data; //データを返り値用の変数に格納
     sp = node_pop->next_node;   //topをpopするノードの次のノードに変更
     free(node_pop);             //今popしたノードが確保していたメモリ領域はもう必要ないので解放
+
+    return data;
+}
+
+char peek(){
+    //スタックがカラの場合NULLを返す
+    if(is_empty()){
+        return NULL;
+    }
+    //スタックのtopを返す。スタック自体は変化しない
+    node* node_peek = sp;       //peekするノードを指すポインタ
+    char data = node_peek->data;//データを返り値用の変数に格納
 
     return data;
 }
