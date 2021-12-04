@@ -32,6 +32,13 @@ char* parse(char str[], int length){
         if(isdigit(str[i])){
             //ヘッダの先が文字が数字であるならばそのままバッファに格納
             buffer[indexbuf++] = str[i];
+            if(!isdigit(str[i+1])){
+                /*
+                もしヘッダの一つ先の文字が数字でないならば、区別のために空白を挿入
+                空白を用いることで並ぶ数字を見分けることが可能
+                */
+                buffer[indexbuf++] = " ";
+            }
         }else if(str[i] == ')'){
             /*
             '('までスタックをpopし、バッファへ送る
@@ -56,13 +63,16 @@ char* parse(char str[], int length){
         }else{
             while(peek() != NULL){
                 if(rank(str[i]) > rank(peek())){
-                    //スタックのtopの演算子の優先順位がヘッダの先の塩酸氏の優先順位より低い場合
+                    //スタックのtopの演算子の優先順位がヘッダの先の演算子の優先順位より低い場合
                     buffer[indexbuf++] = pop();
                 }else{
                     //逆の場合
                     push(str[i]);
                     break;
                 }
+            }
+            if(peek() == NULL){
+                push(str[i]);
             }
         }
     }
