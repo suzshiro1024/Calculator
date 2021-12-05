@@ -9,7 +9,9 @@ typedef struct node{
 
 node* sp;                   //スタックのtopを指すポインタ(先頭のノードを指す)
 
-bool is_empty();            //isEmpty
-void push(char value);      //push
-char pop();                 //pop
-char peek();                //peek
+//関数のプロトタイプ宣言
+bool is_empty();
+void push(char value);
+char pop();
+char peek();
+int stack_size();

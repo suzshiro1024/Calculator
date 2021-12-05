@@ -59,3 +59,16 @@ char peek(){
 
     return data;
 }
+
+int stack_size(){
+    node* pointer = sp;
+    if(pointer == NULL){
+        printf("ERROR: Stack is not exist.\n");
+        exit(1);
+    }
+    int size = 1;
+    while(pointer->next_node != NULL){
+        size++;
+        pointer = pointer->next_node;
+    }
+}
