@@ -37,7 +37,7 @@ char* parse(char str[], int length){
                 もしヘッダの一つ先の文字が数字でないならば、区別のために空白を挿入
                 空白を用いることで並ぶ数字を見分けることが可能
                 */
-                buffer[indexbuf++] = " ";
+                buffer[indexbuf++] = ' ';
             }
         }else if(str[i] == ')'){
             /*
