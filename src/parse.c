@@ -18,9 +18,7 @@ int rank(char operator){
     }
 }
 
-/*
-中値記法を逆ポーランド記法に変換するアルゴリズム
-*/
+//中値記法を逆ポーランド記法に変換するアルゴリズム
 char* parse(char str[], int length){
     char token;    //スタックからpopした文字
 

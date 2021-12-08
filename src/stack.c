@@ -3,10 +3,12 @@
 #include <stdlib.h>
 #include "stack.h"
 
+//スタックがカラかどうか確認する関数
 bool is_empty(){
     return sp == NULL;  //もしスタックのtopを指すポインタの中身がNULLであるならばスタックは空
 }
 
+//push
 void push(char data){
     node* node_new; // 新しいノードを指すポインタを用意する
 
@@ -34,6 +36,7 @@ void push(char data){
     }
 }
 
+//pop
 char pop(){
     //スタックがカラの場合NULLを返す
     if(is_empty()){
@@ -48,6 +51,7 @@ char pop(){
     return data;
 }
 
+//スタックの最上位の中身を参照する関数
 char peek(){
     //スタックがカラの場合NULLを返す
     if(is_empty()){
@@ -60,6 +64,7 @@ char peek(){
     return data;
 }
 
+//スタックのノードの数を数える関数
 int stack_size(){
     node* pointer = sp;
     if(pointer == NULL){
