@@ -7,10 +7,17 @@
 //数字の桁数を計算
 int cal_digit(int num){
     int digit = 0;
-    while(num != 0){
-        num /= 10;
+
+    //値が負数ならカウントを増やす("-"の分)
+    if(num < 0){
         digit++;
     }
+
+    do{
+        num /= 10;
+        digit++;
+    }while(num != 0);
+
     return digit;
 }
 
