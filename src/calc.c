@@ -47,6 +47,13 @@ int num_push(char* buffer,int i){
 int num_pop(){
     //数字を格納
     char* num = calloc(stack_size()+1,sizeof(char));
+
+    //NULLチェック
+    if(num == NULL){
+        puts("ERROR calloc Failed");
+        exit(1);
+    }
+
     //数字をバッファに取り出し
     int index = 0;
     if(!isdigit(peek())&&peek()!='-'){

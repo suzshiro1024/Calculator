@@ -24,6 +24,13 @@ char* parse(char str[], int length){
 
     //返り値となる文字列を格納するバッファ
     char* buffer = calloc(length+1, sizeof(char));
+
+    //NULLチェック
+    if(buffer == NULL){
+        puts("ERROR calloc Failed");
+        exit(1);
+    }
+
     int indexbuf = 0;
 
     for(int i = 0; i < length; i++){
