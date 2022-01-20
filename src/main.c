@@ -14,8 +14,8 @@ int main(void){
     fp = fopen("calc.txt","r");
 
     if(fp == NULL){
-        printf(" > ");
-        scanf("%s",str);
+        puts("ERROR File Not Found");
+        exit(1);
     }else{
         fscanf(fp,"%s",str);
     }
@@ -34,7 +34,7 @@ int main(void){
 
     if(fp==NULL){
         puts("ERROR File Not Found");
-        printf("result = %d",result);
+        exit(1);
     }else{
         fprintf(fp,"=%d\n",result);
     }
